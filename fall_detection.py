@@ -89,7 +89,7 @@ class Fall:
 		sig_est = np.matmul(Eig, x_est) + mean
 		mse = (np.square(sig - sig_est)).mean(axis=None)/(np.square(sig)).mean(axis=None)
 
-		if mse < self.threshold:
+		if mse > self.threshold:
 			return True
 		else:
 			return False
